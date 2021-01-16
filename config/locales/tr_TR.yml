@@ -161,7 +161,7 @@ tr_TR:
         username: Kullanıcı adı
       title: Kullanıcıları Yönet
   add_to_google_calendar: "Kullanıcıları Yönet"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: İdrak Academy
   bigbluebutton_exception: Hata! Toplantıya başlarken bir hata oluştu!
   cancel: İptal
   cookies:
@@ -181,7 +181,7 @@ tr_TR:
   errors:
     bigbluebutton:
       help: "Lütfen doğru adımların yürütüldüğünden emin olun <a href=\"%{doc_link}\">Daha fazla</a>"
-      message: Geçersiz BigBlueButton bitiş noktası ve gizli
+      message: Geçersiz İdrak Academy bitiş noktası ve gizli
       title: Sunucu hatası
     internal:
       message: Bir şeyler ters gitti gibi görünüyor.
