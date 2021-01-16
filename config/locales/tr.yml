@@ -1,4 +1,4 @@
-# İdrak Academy open source conferencing system - http://www.bigbluebutton.org/.
+# İdrak Academy open source conferencing system - http://www.idrakacademy.com/.
 #
 # Copyright (c) 2018 İdrak Academy Inc. and by respective authors (see below).
 #
@@ -16,15 +16,15 @@
 
 # Locale.
 
-tr_TR:
+tr:
   activerecord:
     attributes:
       user:
-        accepted_terms: "Şartlar ve Koşullar"
+        accepted_terms: "Şartlar ve koşullar"
         email: E-posta
-        name: İsim
+        name: Adınız Soyadınız
         password: Parola
-        password_confirmation: Parola Onayı
+        password_confirmation: Parolanızı onaylayın
     errors:
       models:
         user:
@@ -34,373 +34,436 @@ tr_TR:
       authentication:
         disabled: Devre dışı
         enabled: Etkin
-        info: Yalnızca kimliği doğrulanmış kullanıcıların bir oturuma katılmalarına izin ver
-        title: Oturumlar için Kimlik Doğrulama Gerektir
-        user-info: Bunun için giriş yapmalısınız
+        info: Yalnızca kimliği doğrulanmış kullanıcıların bir odaya katılmasına izin ver
+        title: Odalar için Kimlik Doğrulaması Gerektir
+        user-info: Bu odaya katılmak için yukarıda oturum açmalısınız.
       branding:
-        change: Resmi Değiştir
-        info: Sol üst köşedeki marka logosunu değiştirin
-        placeholder: Resim Url...
-        title: Marka Resmi
-        invalid: Geçersiz URL
+        change: Resmi değiştir
+        info: Sol üst köşede görünen marka resmini değiştirin
+        placeholder: Resim Bağlantısı ...
+        title: Firma Logosu
+        invalid: Geçersiz Bağlantı
+      legal:
+        change: Bağlantıyı değiştir
+        info: Sayfanın altında görünen Şartlar Bağlantısını değiştirin
+        placeholder: Şartlar Bağlantısı ...
+        title: Şartlar
+        invalid: Geçersiz Bağlantı
+      privpolicy:
+        change: Bağlantıyı değiştir
+        info: Sayfanın altında görünen Gizlilik Politikası Bağlantısını değiştirin
+        placeholder: Gizlilik Politikası Bağlantısı...
+        title: Gizlilik Politikası
+        invalid: Geçersiz Bağlantı
       cache:
-        info: Güncellenmiş bilgiler için yeni bir istekte bulunan depolanmış sağlayıcı önbelleğini temizler
+        info: Güncellenen bilgi için yeni bir istek zorlayan depolanan sağlayıcı önbelleğini temizler
         title: Sağlayıcı Önbelleğini Temizle
         button: Önbelleği Temizle
       clear_auth:
-        info: Kullanıcılar için geçerli kimlik doğrulayıcıyı temizler ve farklı bir kimlik doğrulama yöntemi kullanarak tekrar oturum açmalarına izin verir
-        title: Geçerli Kimlik Doğrulayıcıyı Temizle
-        button: Yetkilendirme
+        info: Kullanıcıların farklı bir kimlik doğrulama yöntemi kullanarak tekrar oturum açmalarına izin veren mevcut kimlik doğrulayıcısını temizler
+        title: Mevcut Kimlik Doğrulayıcıyı Temizle
+        button: Yetkilendirmeyi Temizle
       color:
-        info: "Normal Rengi değiştirmek , hem Açıklaştır hem de Koyulaştırır. Açıklaştır ve Koyulaştır sonra ayrı ayrı değiştirilebilir."
-        title: Ana Renk
-        regular: Düzenli
-        lighten: Rengi aç
-        darken: Koyult
+        info: Normal Rengi değiştirmek hem Açıklaştır'ı hem de Koyulaştır'ı değiştirir. Açıklaştır ve Koyulaştır daha sonra ayrı ayrı değiştirilebilir
+        title: Birincil renk
+        regular: Normal
+        lighten: Aydınlık
+        darken: Karanlık
       log_level:
-        title: Oturum açma düzeyi
-        information: Tüm dağıtım için oturum açma düzeyini değiştir
-        debug: Hata ayıkla
+        title: Günlük Düzeyi
+        information: Tüm dağıtım için Günlük Düzeyini değiştirin
+        debug: Hata ayıklama
         info: Bilgi
-        warn: Uyar
+        warn: İkaz
         error: Hata
-        fatal: Onulmaz
+        fatal: Fatal
         unknown: Bilinmeyen
       recording_visibility:
-        info: Yeni kayıtlar için varsayılan kayıt görünürlüğünü ayarlama
-        title: Varsayılan Görünürlük Kaydı
-        warning: Bu ayar yalnızca çalışmayan odalara uygulanır
+        info: Yeni kayıtlar için varsayılan kayıt görünürlüğünü ayarlayın
+        title: Varsayılan Görünürlüğü Kaydetme
+        warning: Bu ayar yalnızca çalışmayan odalara uygulanacak
+      require_consent:
+        info: Bu ayar, oda sahiplerinin hangi odaların kaydedilebileceğini belirlemesine olanak tanıyan bir oda ayarını etkinleştirir. Kayıtlı bir odaya katılan kullanıcılar, katılmadan önce onay vermelidir.
+        title: Kayıt İçin Oda Sahibi ve Katılımcı İzni İste
+      maintenance_banner:
+        info: Kullanıcıyı planlanmış bir bakım hakkında bilgilendirmek için bir Başlık görüntüler
+        title: Bakım Afişi
+        display: Ayarla
+        clear: Temizle
+        time: "Örnek: Güncelleme 13 Aralık @ 23:00 ET'de planlandı. Kullanıcılar oturum açarken sorun yaşayabilir."        
+      preupload:
+        info: Kullanıcılar, belirli bir oda için varsayılan sunum olarak kullanılacak bir sunumu önceden yükleyebilir
+        title: Kullanıcıların Sunumları Önceden Yüklemesine İzin Verin
       registration:
-        info: Kullanıcıların web sitesine kayıt olma şeklini değiştirin
+        info: Kullanıcıların web sitesine kaydolma şeklini değiştirin
         title: Kayıt Yöntemi
         methods:
-          approval: Onayla/Reddet
-          invite: Davete Katıl
-          open: Kaydı Aç
+          approval: Onayla / Reddet
+          invite: Davet ile Katıl
+          open: Açık Kayıt
       rooms:
-        info: Kullanıcının sahip olabileceği oda sayısını kısıtlar (Ana oda dahil). Bu ayar adminlere uygulanamaz.
+        info: Bir kullanıcının sahip olabileceği oda sayısını sınırlar (Ana Oda dahil). Bu ayar yöneticiler için geçerli değildir.
         title: Kullanıcı Başına Oda Sayısı
       shared_access:
-        info: "Devre dışı ayarını seçmek oda seçenekleri düğmesini kaldırır, kullanıcıların odaları paylaşmasını önler"
-        title: Kullanıcıların odaları paylaşmasına olanak verir
-      subtitle: İdrak Academy Konferans Sistemi'ı Özelleştir
+        info: Devre dışı olarak ayarlamak, Oda seçenekleri açılır listesinden düğmeyi kaldırarak kullanıcıların odaları paylaşmasını engeller
+        title: Kullanıcıların Odaları Paylaşmasına İzin Ver
+      subtitle: İdrak Academy Konferans Sistemini Özelleştirin
+      tabs:
+        appearance: Görünüm
+        administration: Yönetici
+        settings: Ayarlar
       title: Site Ayarları
     flash:
-      approved: Kullanıcı Başarıyla Onaylandı
-      banned: Kullanıcı Başarıyla Yasaklandı
-      unbanned: Kullanıcının Yasağı Başarıyla Kaldırıldı
-      delete: Kullanıcı Başarıyla Silindi
-      delete_fail: Kullanıcı Silinemedi
-      demoted: Kullanıcı başarıyla indirgendi
-      invite: "Davet başarıyla gönderildi %{email}"
-      invite_email_verification: Bu yöntemi kullanabilmek için e-postaların etkinleştirilmesi gerekir. Lütfen sistem yöneticinize başvurun.
-      merge_fail: Kullanılıcıları birleştirirken bir hata oluştu. Lütfen seçili kullanıcıları kontrol edin ve yeniden deneyin. 
-      merge_success: Kullanıcılar başarılı şekilde birleştirildi
+      approved: Kullanıcı başarıyla onaylandı.
+      banned: Kullanıcı başarıyla engellendi.
+      unbanned: Kullanıcının engellenmesi başarıyla kaldırıldı.
+      delete: Kullanıcı başarıyla silindi
+      delete_fail: Kullanıcı silinemedi
+      demoted: Kullanıcı başarılı bir şekilde düşürüldü
+      invite: Davet başarıyla %{email} adresine gönderildi
+      invite_email_verification: Bu yöntemi kullanmak için e-postaların etkinleştirilmesi gerekir. Lütfen sistem yöneticinize başvurun.
+      merge_fail: Kullanıcı hesaplarını birleştirirken bir sorun oluştu. Lütfen seçilen kullanıcıları kontrol edin ve tekrar deneyin
+      merge_success: Kullanıcı hesapları başarıyla birleştirildi
       perm_deleted: Kullanıcı kalıcı olarak silindi
-      promoted: Kullanıcı başarıyla terfi etti
+      promoted: Kullanıcı başarıyla yükseltildi
       registration_method_updated: Kayıt yöntemi başarıyla güncellendi
-      reset_password: Kullanıcıya şifresini değiştirmesi için e-posta gönderildi. (Eğer e-posta alınmadıysa lütfen spam kutusunu kontrol etmelerini isteyiniz)
+      reset_password: Kullanıcıya şifresini sıfırlaması için bir e-posta gönderildi. (Lütfen almamışlarsa spam klasörlerini kontrol etmelerini isteyin)
       restored: Kullanıcı başarıyla geri yüklendi
-      settings: Site ayarları başarıyla değiştirildi
+      room_configuration: Oda Yapılandırması başarıyla değiştirildi
+      settings: Site Ayarları başarıyla değiştirildi
       unauthorized: Bu kullanıcı üzerinde işlem yapma yetkiniz yok
     recordings:
       title: Sunucu Kayıtları
-      no_recordings: Bu sunucuda kayıt yok
+      no_recordings: Bu sunucuda kayıt yok.
     roles:
-      appear_in_share_list: Kullanıcıları odaları paylaşmaları için  bu rolle açılır listeye ekleyin
-      can_create_rooms: Odalar oluşturulabilir
-      delete: Rolü sil
-      invalid_create: Rol oluşturulurken hata oldu. Lütfen rol değerlerini yeniden kontrol ediniz.
-      invalid_order: Rol önceliğini güncellerken hata oluştu. Lütfen değerleri kontrol edip yeniden deneyiniz.
-      invalid_update: Role atanmış izinlerin güncellenmesinde bir hata oluştu. Lütfen değerleri kontrol edip yeniden deneyiniz.
+      appear_in_share_list: Odaları paylaşmak için açılır listeye bu role sahip kullanıcıları dahil edin
+      can_create_rooms: Odalar oluşturabilir
+      delete: Rolü silin
+      invalid_create: Yeni bir rol oluşturulurken bir sorun meydana geldi. Lütfen rol değerlerini kontrol edin ve tekrar deneyin
+      invalid_order: Rolün önceliği güncellenirken bir sorun oluştu. Lütfen değerleri kontrol edin ve tekrar deneyin
+      invalid_update: Rolün izinleri güncellenirken bir sorun oluştu. Lütfen değerleri kontrol edin ve tekrar deneyin
       manage_rooms_recordings: Bu role sahip kullanıcıların sunucu odalarını ve kayıtları yönetmesine izin ver
-      name: Rol ismi
-      new_role: "Yeni bir rol oluştur "
-      role_has_users: "Bu rol %{user_count} hesabına atanmıştır. silmeden önce lütfen tüm hesapları kaldırınız."
+      name: Rol Adı
+      new_role: Yeni bir rol oluşturun
+      role_has_users: Bu rol %{user_count} hesabına atandı. Lütfen silmeden önce bu roldeki tüm hesapları kaldırın.
       title: Roller
-      promote_email: Bu rol atandığında kullanıcılara bir e-posta gönder
-      demote_email: Bu rolden kaldırıldıklarında kullanıcılara bir e-posta gönder
-      edit_site_settings: Bu roldeki kullanıcıların site ayarlarını düzenlemesine izin ver
-      edit_roles: Bu roldeki kullanıcıların site ayarlarını düzenlemesine izin ver
-      manage_users: Bu roldeki kullanıcıların kullanıcıları yönetmesine izin ver
-      invalid_assignment: Kullanıcıya rolün atanmasında hata oluştu. Lütfen değerleri kontrol edip yeniden deneyiniz. 
+      promote_email: Bu role atandıklarında kullanıcılara bir e-posta gönderin
+      demote_email: Bu rolden çıkarıldıklarında kullanıcılara bir e-posta gönderin
+      edit_site_settings: Bu role sahip kullanıcıların site ayarlarını düzenlemesine izin ver
+      edit_roles: Bu role sahip kullanıcıların diğer rolleri düzenlemesine izin ver
+      manage_users: Bu role sahip kullanıcıların kullanıcıları yönetmesine izin ver
+      invalid_assignment: Kullanıcıya roller atanırken bir sorun oluştu. Lütfen değerleri kontrol edin ve tekrar deneyin
       colour:
-        title: Rol rengi
-        info: Rolle ilişkilendirilecek rengi ayarlama
+        title: Rol Rengi
+        info: Rolle ilişkilendirilecek rengi ayarlayın
+    room_configuration:
+      title: Oda Yapılandırması
+      mute:
+        info: İdrak Akademi toplantısına katıldıklarında kullanıcıyı otomatik olarak sessize alır
+      require_moderator:
+        info: Bir kullanıcı katılmaya çalıştığında İdrak Akademi toplantısının moderatörünü uyarır. Kullanıcı onaylanırsa, toplantıya katılabilir.
+      allow_any:
+        info: Herhangi bir kullanıcının herhangi bir zamanda toplantıyı başlatmasına izin verir. Varsayılan olarak, yalnızca oda sahibi toplantıyı başlatabilir.
+      all_moderator:
+        info: Toplantıya katıldıklarında tüm kullanıcılara İdrak Akademi'de moderatör ayrıcalıkları verir.
+      recordings:
+        info: Oda sahiplerinin bir odayı kaydetme seçeneğini isteyip istemediklerini belirlemelerine izin verir. Etkinleştirilirse, toplantı başladığında moderatör yine de "Kaydet" düğmesini tıklamalıdır.
+      options:
+        disabled: Devre dışı
+        enabled: Her zaman etkin
+        optional: İsteğe bağlı
     rooms:
       title: Sunucu Odaları
       table:
-        id: Kimlik bilgisi
-        not_running: Çalışmıyor
-        running: Çalışıyor
+        ended: "Bitti: %{session}"
+        id: ID
+        not_running: Çalışmıyor...
+        participants: Katılımcılar
+        running: Çalışıyor...
+        started: "Başladı: %{session}"
         status: Durum
-        view: Görünüm
-    title: Organizasyon ayarları
+        view: Göster
+    title: Organizasyon Ayarları
     users:
-      invite: Kullanıcıyı davet et
+      invite: Kullanıcıyı Davet Et
       edit:
-        title: Kullanıcıyı davet et
+        title: Kullanıcı Ayrıntılarını Düzenle
       settings:
         approve: Onayla
         decline: Reddet
-        ban: Kullanıcıyı yasakla
+        ban: Engelle
         delete: Sil
         edit: Düzenle
         edit_roles: Kullanıcı rollerini düzenleyin
+        merge: Birleştir
         perm_delete: Kalıcı olarak sil
-        unban: Kullanıcı Yasağını Kaldır
-        undelete: Geri al
+        unban: Engeli kaldır
+        undelete: Silmeyi geri al
       table:
-        authenticator: Kimlik denetleyicisi
-        created: Düzenlendi
+        authenticator: Doğrulayıcı
+        created: Oluşturuldu
         name: İsim
         not_found: Aramanızla eşleşen kullanıcı yok
         no_users: Kullanıcı bulunamadı
         role: Rol
-        uid: Kullanıcı kimliği
+        uid: Kullanıcı ID
         username: Kullanıcı adı
       title: Kullanıcıları Yönet
-  add_to_google_calendar: "Kullanıcıları Yönet"
-  bigbluebutton: İdrak Academy
-  bigbluebutton_exception: Hata! Toplantıya başlarken bir hata oluştu!
+  add_to_google_calendar: "Google Takvime ekle"
+  bigbluebutton: IMPAVIT Buluşması
+  bigbluebutton_exception: Hata! Toplantı başlatılırken bir hata oluştu!
   cancel: İptal
   cookies:
-    cookie_info: Çerezler hizmetlerimizi sunmamıza yardım etmektedir. Hizmetleri kullanırken çerezlerin kullanılmasını kabul etmektesiniz.
-    cookie_button: Katılıyorum
-  copied: Kopyalanan
-  copy: Kopya
+    cookie_info: Çerezler, hizmetlerimizi sunmamıza yardımcı olur. Hizmetlerimizi kullanarak, çerez kullanımımızı kabul etmiş olursunuz.
+    cookie_button: Kabul ediyorum
+  copied: Kopyalandı
+  copy: Kopyala
   date:
     month_names: [~, Ocak, Şubat, Mart, Nisan, Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık]
-  default_admin: "Bu hesap halen  için varsayılan şifreyi kullanıyorsunuz. Değiştirmek için lütfen <a href=\"%{edit_link}\">burayı</a> tıklayınız."
+  default_admin: Hala bu hesap için varsayılan şifreyi kullanıyorsunuz. Değiştirmek için lütfen <a href="%{edit_link}"> burayı </a> tıklayın
   delete: Sil
-  delivery_error: E-Posta gönderilirken bir hata oluştu. Lütfen sistem yöneticisi ile iletişime geçiniz!
+  delivery_error: E-posta teslimi sırasında bir hata oluştu. Lütfen bir yönetici ile iletişime geçin!
   docs: Dokümantasyon
   email: E-posta
-  email_sent: "E postanız %{email_type} gönderildi! (Eğer e-posta alınmadıysa lütfen spam kutusunu kontrol etmelerini isteyiniz)"
+  email_sent: %{email_type} e-postanız gönderildi! (Almadıysanız lütfen Spam klasörünüzü kontrol edin)
   enter_your_name: Adınızı giriniz!
   errors:
     bigbluebutton:
-      help: "Lütfen doğru adımların yürütüldüğünden emin olun <a href=\"%{doc_link}\">Daha fazla</a>"
-      message: Geçersiz İdrak Academy bitiş noktası ve gizli
-      title: Sunucu hatası
+      help: Lütfen uygun adımların atıldığından emin olun. <a href="%{doc_link}"> Daha fazla bilgi edinin </a>
+      message: Geçersiz İdrak Akademi Uç Noktası ve Sırrı
+      title: Server hatası
     internal:
-      message: Bir şeyler ters gitti gibi görünüyor.
-      help: "Hata kaydedildi, bir göz atacağız!"
+      message: Görünüşe göre bizim tarafımızda bir şeyler ters gitti.
+      help: Hata kaydedildi, bir göz atacağız!
       report: Rapor bildir
     maintenance:
-      message: "Üzgünüz, bakım için kapalıyız."
-      help: Yakında döneceğim!
+      message: Üzgünüz, bakım için çalışmıyoruz.
+      help: Yakında döneceğiz!
     migration_error:
-      contact_admin: "Yönetici değilseniz, lütfen bir tanesine başvurun."
-      continue: 1.0 kullanarak kalmak istiyorum.
+      contact_admin: Yönetici değilseniz, lütfen biriyle iletişime geçin.
+      continue: 1.0ı kullanmaya devam etmek istiyorum.
       notice: >
-        İdrak Academy Konferans Sistemi veri tabanı aktarımı hatası verdi.<br> İdrak Academy Konferans Sistemi 2.0. güncelleme yapmadığınız için gerçekleşmiş olabilir
-      upgrade: 2.0'a nasıl yükselteceğimi göster!
-      version: "İdrak Academy Konferans Sistemi'ın yeni bir versiyonunu yayınladık, ancak veritabanınız uyumlu değil."
+        Konferans Sistemi bir veritabanı taşıma hatasıyla karşılaştı. <br>
+        Bunun nedeni Konferans Sistemi 2.0'a güncelleme yapmamış olmanız olabilir.
+      upgrade: 2.0a nasıl yükselteceğimi göster bana!
+      version: Konferans Sisteminin yeni bir sürümünü yayınladık, ancak veritabanınız uyumlu değil.
     messages:
       blank: boş olamaz
       too_short: çok kısa
       invalid: geçersizdir
-      taken: daha önce alındı
-      accepted: kabul edildi
-      confirmation: "eşleşmiyor% {Özelliği}"
-      inclusion: Listeye dahil edilmedi
+      taken: çoktan alındı
+      accepted: kabul edilmeli
+      confirmation: %{attribute} ile eşleşmiyor
+      inclusion: listeye dahil değil
     no_provider:
-      message: Erişmeye çalıştığınız site etkin değil
-      help: Lütfen İdrak Academy Konferans Sistemi'ı kurmak için sistem yöneticinize başvurun.
+      message: Erişmeye çalıştığınız site etkinleştirilmemiş
+      help: Konferans Sistemi kurmak için lütfen sistem yöneticinizle iletişime geçin
     not_found:
-      message: Üzgünüm! Aradığınız sayfa mevcut değil.
-      help: "Kaldırılmış olması mümkün mü?"
+      message: Afedersiniz! Aradığınız sayfa mevcut değil.
+      help: Kaldırılmış olması mümkün mü?
       user_not_found:
-        help: Lütfen bir yöneticiye başvurun.
-        message: "Üzgünüz, bu kullanıcı kayıtlı değil."
+        help: Lütfen bir yönetici ile iletişime geçin.
+        message: Üzgünüz, bu kullanıcı kayıtlı değil.
       user_missing:
-        help: Lütfen URL’yi doğrulayın ve tekrar deneyin
-        message: Girdiğiniz URL geçerli değil.
+        help: Lütfen Bağlantıyı doğrulayın ve tekrar deneyin
+        message: Girdiğiniz Bağlantı geçerli değil.
     title: Hatalar
     unauthorized:
       message: Bu uygulamaya erişiminiz yok
-      help: "Bunun bir hata olduğunu düşünüyorsanız, lütfen sistem yöneticinize başvurun."
+      help: Bunun bir hata olduğuna inanıyorsanız, lütfen sistem yöneticinize başvurun.
   expired_reset_token: Şifre sıfırlama bağlantısının süresi doldu!
   features:
-    title: Özellikler
+    title: Özellikleri
     rooms: Kişiselleştirilmiş Odalar
     recordings: Kayıt Yönetimi
-    designs: Özel tasarımlar
+    designs: Özel Tasarımlar
     authentication: Kullanıcı doğrulama
   footer:
-    powered_by: "Powered by %{href}."
+    legal: Koşullar
+    privpolicy: Gizlilik Politikası
+    powered_by: % {href} tarafından desteklenmektedir.
   forgot_password:
     subtitle: Parolanızı mı unuttunuz
-    email: E-mail
+    email: E-posta adresi
     submit: Gönder
-  go_back: Geri dön
-  greenlight: İdrak Academy Konferans Sistemi
+  go_back: Geri gel
+  greenlight: Konferans Sistemi
   header:
     all_recordings: Tüm Kayıtlar
     dropdown:
-      account_settings: organizasyon
-      help: "Yardıma mı ihtiyacınız var?"
-      home: Ev
-      settings: profil
-      signout: Oturumu Kapat
-  home_room: Ev Odası
-  info_update_success: Bilgi başarıyla güncellendi.
-  invalid_credentials: "Girdiğiniz e-posta ve şifre kayıtlarımızla eşleşmedi. Parolanızı sıfırlamak için tekrar deneyin veya Parolanızı mı unuttunuz?"
-  invalid_login_method: Hesap uyumsuzluğu nedeniyle giriş yapılamadı. OmniAuth ile giriş yapmalısınız
-  invite_message: "Birisini toplantıya davet etmek için onlara şu bağlantıyı gönderin:"
+      account_settings: Organizasyon
+      help: Yardım
+      home: Anasayfa
+      settings: Profil
+      signout: Güvenli Çıkış
+  home_room: Ana Oda
+  info_update_success: Bilgiler başarıyla güncellendi.
+  invalid_credentials: Girdiğiniz e-posta ve şifre, kayıtlarımızla eşleşmedi. Tekrar deneyin veya şifrenizi sıfırlamak için Şifremi Unuttum'u tıklayın.
+  invalid_login_method: Hesap uyuşmazlığı nedeniyle giriş başarısız oldu. Omniauth ile giriş yapmanız gerekiyor.
+  invite_message: "Birini toplantıya davet etmek için ona şu bağlantıyı gönderin:"
   javascript:
     room:
       mailer:
-        subject: 'sizi bir kaydı izlemeye davet etti'
-        body: 'Kaydı görüntülemek için aşağıdaki bağlantıyı takip edin:'
-        autogenerated: 'Bu e-posta İdrak Academy tarafından otomatik olarak oluşturulmuştur.'
-        footer: 'İdrak Academy web konferans sistemi.  İdrak Academy hakkında daha fazla bilgi için,  https://idrakacademy.com'
+        subject: 'sizi bir kaydı görüntülemeye davet etti.'
+        body: 'Kaydı görüntülemek için aşağıdaki bağlantıyı izleyin:'
+        autogenerated: 'Bu e-posta İdrak Akademi tarafından otomatik olarak oluşturulmuştur.'
+        footer: 'İdrak Akademi, açık kaynak kodlu bir web konferans sistemidir. İdrak Akademi hakkında daha fazla bilgi için bkz. Https://idrakacademy.com'
     search:
-      start: Armaya başla
+      start: Aramaya başlayın ...
   landing:
-    about: "%{href} İdrak Academy web konferans sistemi."
-    welcome: İdrak Academy'a hoş geldiniz.
-    video: İdrak Academy Konferans sistemini kullanma hakkındaki eğitimimizi izleyin
-    upgrade: 2.0'a nasıl yükselteceğimi göster!
-    version: "İdrak Academy Konferans Sistemi'ın yeni bir versiyonunu yayınladık, ancak veritabanınız uyumlu değil."
+    about: "%{href}, İdrak Akademi açık kaynak web konferansı sunucunuz için basit bir ön uçtur. Oturumları düzenlemek için kendi odalarınızı oluşturabilir veya kısa ve kullanışlı bir bağlantı kullanarak diğerlerine katılabilirsiniz."
+    welcome: IMPAVIT Meetupa hoş geldiniz.
+    video: Konferans Sistemi kullanma hakkındaki eğitimimizi izleyin
+    upgrade: 2.0a nasıl yükselteceğimi göster bana!
+    version: Konferans Sistemi yeni bir sürümünü yayınladık, ancak veritabanınız uyumlu değil.
   language_default: Varsayılan (tarayıcı dili)
-  ldap_error: LDAP sunucusuna bağlanılamadı. Lütfen env dosyasındaki LDAP konfigürasyonunuzu kontrol ediniz ve sunucunuzun çalıştığından emin olunuz
-  login: oturum aç
-  login_title: hesabınıza giriş yapın
+  ldap_error: LDAP sunucusuna bağlanılamıyor. Lütfen env dosyasındaki LDAP yapılandırmanızı kontrol edin ve sunucunuzun çalıştığından emin olun.
+  login: Oturum Aç
+  login_title: Hesabınıza giriş yapın
   mailer:
     user:
       approve:
         info: Hesabınız onaylandı.
-        signin: Kişisel odalarınıza erişmek için aşağıdaki butona tıklayın ve giriş yapın.
+        signin: Kişisel odalarınıza erişmek için aşağıdaki butona tıklayın ve oturum açın.
         signin_link: Oturum aç
         signup:
-          info: İdrak Academy Konferans Sistemi'ı kullanmak için yeni bir kullanıcı kayıt oldu.
-          more-info: Kullanıcıların İdrak Academy Konferans Sistemi a ulaşabilmeleri için organizasyon ayarlarında kullanıcının hesabını onaylamalısınız
+          info: Konferans Sistemi kullanmak için yeni bir kullanıcı kaydoldu.
+          more-info: Bu kullanıcının Konferans Sistemi erişmesine izin vermek için, kuruluş ayarlarında hesabını onaylamanız gerekir.
           admins_link: Organizasyon Sayfasını Ziyaret Edin
-          subject: Yeni İdrak Academy Konferans Sistemi Kullanıcısı Kayıt Ol
-          username: "Kullanıcı %{name} ismi ve %{email} e-posta adresi ile oturum açtı"
+          subject: Yeni Konferans Sistemi Kullanıcı Kaydı
+          username: Kullanıcı %{name} adı ve %{email} e-postası ile kaydoldu.
         subject: Hesap Onaylandı
-        username: "Kullanıcı adınız %{email}."
+        username: Kullanıcı adınız %{email}.
       demoted:
-        info: "%{url}bağlantısındaki %{role}rolünde değilsiniz"
+        info: Artık %{url} üzerinde %{role} değilsiniz.
         more-info: Artık normal bir kullanıcıyla aynı ayrıcalıklara sahipsiniz.
         root_link: Oturum aç
-        subtitle: "%{role}Hakları geçersiz kılındı"
+        subtitle: "%{role} Hakları İptal Edildi"
       invite:
-        info: "Kişisel alanınıza %{name} tarafından davet edildiniz."
-        signup_info: E-postanızı kullanarak kaydolmak için aşağıdaki butona tıklayın ve adımları izleyin.
+        info: %{name} tarafından kendi kişisel alanınıza davet edildiniz
+        signup_info: E-postanızı kullanarak kaydolmak için aşağıdaki butonu tıklayın ve adımları izleyin.
         signup_link: Kaydol
         signup:
-          info: Davet edilen bir kullanıcı İdrak Academy Konferans Sistemi'ı kullanmak için kaydoldu.
+          info: Davet edilen bir kullanıcı Konferans Salonu kullanmak için kaydoldu.
           admins_link: Organizasyon Sayfasını Ziyaret Edin
-          subject: Yeni İdrak Academy Konferans Sistemi Kullanıcısı Kayıt Ol
-          username: "Kullanıcı %{name} ismi ve %{email} e-posta adresi ile oturum açtı"
-        subject: İdrak Academy'a katılma davetiyesi
-        username: "Kullanıcı adınız%{email}"
+          subject: Yeni Konferans Salonu Kullanıcı Kaydı
+          username: Kullanıcı %{name} adı ve %{email} e-postası ile kaydoldu.
+        subject: İdrak Akademi'ye katılma daveti
+        username: Kullanıcı adınız %{email}.
       password_reset:
         title: 'Parola sıfırlama'
-        welcome: " <b>%{email}</b>e-posta adresi için parola sıfırlaması istenildi"
+        welcome: <b>%{email}</b> e-postası için bir parola sıfırlama istendi
         message: 'Bu sıfırlamayı talep ettiyseniz, şifrenizi sıfırlamak için lütfen aşağıdaki bağlantıyı tıklayın:'
-        reset_link: Şifreyi yenile
-        expire: Bu bağlantı iki saat içinde sona erecek.
-        ignore: "Bu isteği yapmadıysanız, bu e-postayı güvenle yok sayabilirsiniz."
+        reset_link: Parolamı yenile
+        expire: Bu bağlantının süresi iki saat içinde dolacak.
+        ignore: Bu istekte bulunmadıysanız, bu e-postayı güvenle göz ardı edebilirsiniz.
       promoted:
         admins_link: Organizasyon Sayfasını Ziyaret Edin
-        info: "%{url}bağlantısındaki%{role}rolündesiniz"
-        more-info: "Yeni haklarınızı görmek için  %{url} yi ziyaret ediniz"
-        subtitle: "%{role} Hakları verildi"
+        info: Artık %{url} üzerinde %{role} oldunuz.
+        more-info: Yeni yeteneklerinizi görmek için lütfen %{url} adresini ziyaret edin.
+        subtitle: "%{role} Verilen Haklar"
       verify_email:
-        welcome: " %{name}kişisel alanına hoş geldin!"
-        success: " %{bigbluebutton}kullanarak başkanlarıyla görüşmek için kendi odalarınızı oluşturabilir ve birlikte çalışabilirsiniz"
-        username: "Kullanıcı adını% {Email}"
-        verify: Hesabınızı doğrulamak için aşağıdaki butona tıklamanız yeterli.
-        verify_text: 'Hesabınızı doğrulamak için %{url}linkine tıklayınız'
+        welcome: Kişisel alanınıza hoş geldiniz, %{name}!
+        success: %{bigbluebutton} 'dan yararlanarak, oturumlar düzenlemek ve başkalarıyla işbirliği yapmak için kendi odalarınızı oluşturabilirsiniz.
+        username: Kullanıcı adınız %{email}.
+        verify: Hesabınızı doğrulamak için aşağıdaki düğmeyi tıklamanız yeterlidir.
+        verify_text: 'Hesabınızı doğrulamak için şu bağlantıyı izlemeniz yeterlidir: %{url}'
         verify_link: Hesabı Doğrula
-        thanks: Katıldığınız için teşekkür ederiz ve iyi günler!
-  maintenance:
-    window_alert: " %{date} için bakım penceresi takvimlendi"
+        thanks: Katıldığınız için teşekkürler ve iyi günler!
   max_concurrent: İzin verilen maksimum eşzamanlı oturum sayısına ulaşıldı!
-  merged: Birleştirildi
+  merged: Birleştirilmiş
   modal:
     create_role:
-      create: Yeni Bir Rol Oluştur
-      footer_text: Bu rolün bireysel izinlerini oluşturduktan sonra düzenleyebilirsiniz.
+      create: Yeni bir Rol Oluşturun
+      footer_text: Oluşturduktan sonra bu rol için ayrı izinleri düzenleyebilirsiniz
       name_placeholder: Bir rol adı girin ...
-      not_blank: Rol adı boş bırakılamaz.
-      title: Yeni Rol Oluştur
+      not_blank: Rol adı boş olamaz.
+      title: Yeni Rol Oluşturun
     create_room:
-      access_code: Giriş kodu
-      access_code_placeholder: İsteğe bağlı oda erişim kodu oluşturun
-      auto_join: Otomatik olarak odaya katıl
-      create: Oda yarat
-      free_delete: Bu odayı istediğiniz zaman silmekte özgür olacaksınız.
+      access_code: Erişim Kodu
+      access_code_placeholder: İsteğe bağlı bir oda erişim kodu oluşturun
+      auto_join: Odama otomatik olarak katıl
+      create: Oda Oluştur
+      free_delete: Bu odayı istediğiniz zaman silebilirsiniz.
       name_placeholder: Bir oda adı girin ...
-      not_blank: Oda adı boş bırakılamaz.
+      not_blank: Oda adı boş olamaz.
       title: Yeni Oda Oluştur
     delete_account:
-      confirm: "Bu hesabı silmek istediğinize emin misiniz?"
-      delete: Eminim bu hesabı sil.
-      keep: Aslında bunu saklayacağım.
-      delete_warning: Bu işlem kullanıcının hesabını etkinsizleştirir. Tüm etkinsizleştirilmiş kullanıcılar silinmiş sekmesi altında bulunabilir.
-      warning: Bu son karardır. İlgili verileri <b>asla </b> geri kurtaramayacaksınız.
+      confirm: Bu hesabı silmek istediğinizden emin misiniz?
+      delete: Eminim bu hesabı silin.
+      keep: Aslında, bunu saklayacağım.
+      delete_warning: Bu, kullanıcının hesabını devre dışı bırakacaktır. Devre dışı bırakılan tüm kullanıcılar, silinmiş sekme altında bulunabilir.
+      warning: Bu karar kesindir. İlişkili verileri <b>kurtaramayacaksınız</b>.
+    delete_rec:
+      delete: Eminim, bu kaydı silin.
+      header: Bu kaydı silmek istediğinizden emin misiniz?
+      warning: Bu kaydı <b>kurtaramayacaksınız</b>
     delete_room:
-      confirm: " %{room} odasını silmek istediğinizden emin misiniz?"
-      delete: "Eminim, bu odayı silin."
-      keep: "İkinci kez düşününce, tutmaya karar verdim."
-      warning: Bu odası <b>asla</b> geri alamazsınız
-      recording_warning: "veya %{recordings_num} kaydı ile ilişkili kayıtların tümü"
+      confirm: %{room}u silmek istediğinizden emin misiniz?
+      delete: Eminim, bu odayı silin.
+      keep: İkinci kez düşündüm, saklayacağım.
+      warning: Bu odayı <b>kurtaramayacaksınız</b>
+      recording_warning: veya %{recordings_num} ilişkili kayıtlarından herhangi biri.
     invite_user:
-      email_placeholder: Kullanıcıların e-postalarını girin (virgülle ayrılmış)
-      footer: Kullanıcı nasıl giriş yapacağına ilişkin bir e-posta alacak
+      email_placeholder: Kullanıcıların e-postalarını girin (virgülle ayırarak)
+      footer: Kullanıcı, nasıl kaydolacağına ilişkin talimatları içeren bir e-posta alacak
       send: Davetiye gönder
-      title: Kullanıcıyı davet et
+      title: Kullanıcıyı Davet Et
     login:
       or: veya
-      with: " %{provider} ile giriş yap"
-      forgot_password: "Parolanızı mı unuttunuz?"
+      with: %{provider} ile oturum açın
+      forgot_password: Parolanızı mı unuttunuz?
+    preupload:
+      change: Sunuyu Değiştir
+      choose: Bir dosya seçin...
+      current: "Güncel Sunum:"
+      footer: Sunumun boyutuna bağlı olarak, kullanılmadan önce yüklenmesi ek süre gerektirebilir.
+      invalid: Geçersiz boyut / dosya türü. Lütfen aşağıdaki kısıtlamalara bakın.
+      title: Sunum Ekle
+      use: Sunuyu Kullan
     rename_recording:
     remove_shared:
-      title: "Bu odayı oda listenizden kaldırmak istediğinize emin misiniz?"
-      delete: "Eminim, odayı sil."
-      warning: Bu odaya <b>asla</b> tekrar ulaşamayacaksınız
+      title: Bu odayı oda listenizden çıkarmak istediğinizden emin misiniz?
+      delete: Eminim bu odayı kaldırın.
+      warning: Artık bu odaya <b>erişemeyeceksiniz</b>.
     room_settings:
-      title: Oda ayarları
-      update: Oda Güncelleme
-      client: Kullanıcı türünü seçin
+      title: Oda Ayarları
+      update: Odayı Güncelle
+      client: Müşteri türünü seçin
       join_moderator: Tüm kullanıcılar moderatör olarak katılır
-      mute: Katıldıklarında kullanıcıları sustur
-      require_approval: Katılmadan önce moderatör onayı iste
+      mute: Katıldıklarında kullanıcıların sesini kapat
+      require_approval: Katılmadan önce moderatör onayı gerektir
       start: Herhangi bir kullanıcının bu toplantıyı başlatmasına izin ver
-      footer_text: Odanızın ayarlarını herhangi bir zamanda yapabilrisiniz
+      footer_text: Odanız için herhangi bir zamanda ayarlama yapılabilir.
+      recording: Odanın kaydedilmesine izin ver
     rename_room:
       name_placeholder: Yeni bir oda adı girin ...
     share_access:
-      footer: "Bir kullanıcı ile odayı paylaşmak, odayı başlatabilmelerine ve odanın kayıtlarını görüntüleyebilmelerine izin verir"
-      list: ile paylaşılan
-      title: Odaya ulaşımı paylaş
-      save: Değişiklikleri kaydet
-      cancel_changes: Değişikliklerden vazgeç
-      select: Kullanıcıyı seç
+      footer: Bir odayı bir kullanıcıyla paylaşmak, odayı başlatmalarına ve odanın kayıtlarını görüntülemelerine olanak tanır
+      list: ile paylaştı
+      title: Oda Erişimini Paylaş
+      save: Değişiklikleri Kaydet
+      cancel_changes: Değişiklikleri iptal et
+      select: Kullanıcı seç
     merge_user:
-      cancel: Vazgeç
-      from: Birleştirilecek hesap
-      title: Kullanıcı hesaplarını birleştir
-      to: birincil hesap
+      cancel: İptal
+      from: Birleştirilecek Hesap
+      title: Kullanıcı Hesaplarını Birleştirin
+      to: Birincil Hesap
       save: Birleştir
-      footer: Odada birleştirilecek olan hesaplar Birincil Hesabın oda listesi üzerinden transfer edilecek ve daha sonra hesap silinecektir.
+      footer: Birleştirilecek hesabın odaları Birincil Hesabın oda listesine aktarılacak ve ardından hesap silinecektir.
   name_update_success: Oda adı başarıyla değiştirildi!
-  no_user_email_exists: Belirtilen e-postaya sahip mevcut bir kullanıcı yok. Lütfen doğru yazdığınızdan emin olun.
-  omniauth_error: OmniAuth doğrulanırken bir hata oluştu. Lütfen sistem yöneticisi ile iletişime geçiniz!
-  omniauth_specific_error: "%{error} OmniAuth doğrulanırken bir hata oluştu. Lütfen sistem yöneticisi ile iletişime geçiniz!"
+  no_user_email_exists: Belirtilen e-postaya sahip mevcut kullanıcı yok. Lütfen doğru yazdığınızdan emin olun.
+  omniauth_error: Omniauth ile kimlik doğrulama yapılırken bir hata oluştu. Lütfen tekrar deneyin veya bir yönetici ile iletişime geçin!
+  omniauth_specific_error: "Omniauth ile kimlik doğrulama yapılırken %{error} oluştu. Lütfen tekrar deneyin veya bir yönetici ile iletişime geçin!"
   pagy:
     nav:
       prev: "&lsaquo; Önceki"
       next: "Sonraki &rsaquo;"
       gap: "&hellip;"
-  password: Kelime
-  password_empty_notice: Şifre boş olamaz.
-  password_reset_success: Şifre sıfırlandı.
+  password: Parola
+  password_empty_notice: Parola boş olamaz.
+  password_reset_success: Parola sıfırlandı.
   password_different_notice: Parola Onayı eşleşmiyor.
   provider:
     google: Google
@@ -409,102 +472,110 @@ tr_TR:
     ldap: LDAP
   recaptcha:
     errors:
-      recaptcha_unreachable: "Üzgünüz,  reCAPTCHA cevabınızı doğrulayamadık. Lütfen yeniden deneyiniz."
-      verification_failed: "reCAPTCHA vdoğrulaması yapılamadı, lütfen yeniden deneyiniz."
+      recaptcha_unreachable: Hata, reCAPTCHA yanıtınızı doğrulayamadık. Lütfen tekrar deneyin.
+      verification_failed: reCAPTCHA doğrulaması başarısız oldu, lütfen tekrar deneyin.
   recording:
     all_recordings: Tüm Kayıtlar
     email: E-posta Kaydı
-    error: " %{count} kayıt(lar)ı okunurken bir hata oluştu"
-    no_recordings: "Bu odada %{inject}kaydı bulunmamaktadır."
+    error: %{count} kayıt alınırken bir hata oluştu
+    no_recordings: Bu odada %{inject} kaydı yok.
     no_user_recordings: Şu anda hiç kaydınız yok.
-    no_matched_recordings: "Aramanızla eşleşen %{inject} kaydı bulunamadı"
-    recorded_on: " %{date}üzerine kaydedildi"
+    no_matched_recordings: Aramanızla eşleşen %{inject} kaydı yok.
+    recorded_on: %{date} tarihinde kaydedildi
     table:
-      name: İsim
+      name: Adı
       thumbnails: Küçük resimler
       length: Uzunluk
       users: Kullanıcılar
       visibility: Görünürlük
-      formats: Biçimleri
+      formats: Biçimler
     visibility:
-      public: açık
-      unlisted: Liste dışı
+      public: Herkese açık
+      unlisted: Listelenmemiş
     format:
       notes: Notlar
-      podcast: Podcast
+      podcast: Dijital ses dosyası
       presentation: Sunum
       statistics: İstatistikler
       video: Video
   registration:
     approval:
-      fail: Kullanıcı hesabını henüz onaylanmadı. Kayıt olduktan sonra bir kaç gün geçmiş ise lütfen sistem yöneticiniz ile iletişime geçiniz.
-      signup: Hesabınız başarıyla oluşturuldu. Sistem yöneticisi  onayı bekleniyor.
+      fail: Hesabınız henüz onaylanmadı. Kaydolmanızın üzerinden birkaç gün geçtiyse, lütfen yöneticinizle iletişime geçin.
+      signup: Hesabınız başarılı bir şekilde oluşturulmuştur. Onay için bir yöneticiye gönderildi.
     banned:
-      fail: "Bu uygulamaya giriş izniniz bulunmamaktadır. Bunun bir hata olduğunu düşünüyorsanız, lütfen sistem yöneticinize başvurun." 
+      fail: Bu uygulamaya erişiminiz yok. Bunun bir hata olduğuna inanıyorsanız, lütfen yöneticinize başvurun.
     deprecated:
-      new_signin: "Hesabınıza giriş için yeni bir yöntem seçin. Eski hesabınıza ait tüm odalar yeni hesabınıza aktarılacaktır. "
-      twitter_signin: "Twitter aracılığıyla girişler yeni sürümde kaldırılacaktır. Yeni hesap doğrulama yöntemi için  <a href=\"%{link}\"> buraya </a> tıklayınız."
-      twitter_signup: Twitter aracılığıyla girişler yeni sürümde kaldırılmıştır. Yeni bir giriş yöntemi deneyiniz.
-      merge_success: "Yeni Twitter hesabınızla eşleşme başarılı oldu. Eski Twitter hesabınız silindi. "
+      new_signin: Hesabınız için yeni bir giriş yöntemi seçin. Eski hesabınızdaki tüm odalarınız yeni hesaba taşınacak
+      twitter_signin: Twitter üzerinden oturum açma kullanımdan kaldırıldı ve bir sonraki sürümde kaldırılacak. Hesabınızı yeni bir kimlik doğrulama yöntemine taşımak için <a href="%{link}"> burayı </a> tıklayın
+      twitter_signup: Twitter üzerinden kaydolma kullanımdan kaldırıldı. Lütfen farklı bir kayıt yöntemi kullanın
+      merge_success: Twitter hesabınızı yeni hesabınızla başarıyla birleştirdi. Eski twitter hesabınız silindi
     invite:
-      fail: "Token geçersiz veya tarihi geçmiş. Bunun bir hata olduğunu düşünüyorsanız, lütfen sistem yöneticinize başvurun."
-      no_invite: "Katılmak için davetiyeniz bulunmamaktadır. Bunun bir hata olduğunu düşünüyorsanız, lütfen sistem yöneticinize başvurun."
+      fail: Jetonunuz geçersiz veya süresi dolmuş. Bunun bir hata olduğuna inanıyorsanız, lütfen yöneticinize başvurun.
+      no_invite: Katılmak için bir davetin yok. Bir tane almak için lütfen yöneticinizle iletişime geçin.
   remove: Kaldır
-  rename: İsmi değiştir
+  rename: Yeniden adlandır
   reset_password:
-    subtitle: Şifreyi yenile
-    password: Yeni Şifre
+    invalid_token: Parola sıfırlama belirteci geçersiz. Lütfen parolanızı yeniden sıfırlamayı deneyin.
+    subtitle: Parolayı yenile
+    password: Yeni Parola
     confirm: Yeni parola onayı
-    update: Şifre güncelle
-    auth_change: Doğrulama yöntemi değişti. Parolanızı oluşturmak için e-postanızı kontrol edin.
+    update: Parolayı güncelle
+    auth_change: Kimlik doğrulama yöntemi değişti. Lütfen parolanızı belirlemek için e-postanızı kontrol edin.
   roles:
     active: Aktif
     admin: Yönetici
-    banned: Yasaklı
+    banned: Engelli
     deleted: Silindi
-    pending: Beklemede
+    pending: Bekliyor
     user: Kullanıcı
   room:
     access_code_required: Lütfen odaya katılmak için geçerli bir erişim kodu girin
-    create_room: Oda Oluştur
-    create_room_error: Oda oluşturulurken bir hata oluştu
+    add_presentation: Sunum Ekle
+    create_room: Bir Oda Oluşturun
+    create_room_error: Oda oluşturulurken bir hata meydana geldi
     create_room_success: Oda başarıyla oluşturuldu
     delete:
-      home_room: Kullanıcının ana odası silinemiyor
+      home_room: Kullanıcının Ev Odası silinemiyor
       success: Oda başarıyla silindi
-      fail: "(%{error}) odası silinemedi"
+      fail: Oda silinemedi (%{error})
     enter_the_access_code: Odanın erişim kodunu girin
-    invalid_provider: Geçersiz bir URL girdiniz. Lütfen URL’yi kontrol edip tekrar deneyin.
+    invalid_provider: Geçersiz bir url girdiniz. Lütfen bağlantıyı kontrol edin ve tekrar deneyin.
+    invitation_description: İdrak Akademi'yi kullanarak %{name} grubuna davet edildiniz. Katılmak için yukarıdaki bağlantıya tıklayın ve adınızı girin.
     invited: Katılmaya davet edildiniz
+    recording_present: Bu toplantının kaydedileceğini kabul ediyorum. Bu, etkinleştirilirse sesimi ve videomu içerebilir.
     invite_participants: Katılımcıları Davet Et
     join: Katıl
-    last_session: "%{session} da son oturum"
-    login: Gir
-    owner: Toplantı sahibi
-    owner_banned: bu oda şu anda uygun değil
+    last_session: %{session} tarihindeki son oturum
+    login: Giriş
+    owner: Sahip
+    owner_banned: Bu oda şu anda müsait değil
     no_room:
-      description: Katılmak istediğiniz oda adını veya URL sini giriniz
+      description: Katılmak istediğiniz odanın oda bağlantısını veya oda kimliğini girin.
       edit_profile: Kullanıcı Profilini Düzenle
-      go_to: Odaya git
-      invalid_room_uid: Girdiğiniz oda url'si / kullanıcı kimliği geçersizdi.
-      placeholder: Oda URL'si / kullanıcı kimliği
-      no_recent_rooms: Yakın zamanda katıldığınız odanız yok
-      recent_rooms: Yeni Katılan Bir Odaya Git
-      title: Bir Odaya Katılın
-    no_sessions: Bu odada henüz bir oturum yok!
-    recordings: Oda kayıtları
+      go_to: Odana git
+      invalid_room_uid: Girdiğiniz oda url'si / kimliği geçersizdi.
+      placeholder: Oda Bağlantısı / Kimliği
+      no_recent_rooms: Yakın zamanda katılmış odanız yok
+      recent_rooms: En Son Katılan Odaya Git
+      title: Bir Odaya Katıl
+    no_sessions: Bu odada henüz oturum yok!
+    preupload_success: Sunu başarıyla eklendi
+    preupload_error: Oda sunumu güncellenirken bir hata oluştu
+    preupload_remove_success: Sunu başarıyla kaldırıldı
+    preupload_remove_error: Oda sunumunu kaldırırken bir hata oluştu
+    recordings: Oda Kayıtları
     room_limit: İzin verilen maksimum oda sayısına ulaştınız
-    room_limit_exceeded: "İzin verilen maksimum oda sayısını aştınız. Bu odaya(lara) girebilmek için  %{difference} lütfen siliniz"
+    room_limit_exceeded: İzin verilen oda sayısını aştınız. Bu odaya erişmek için lütfen %{difference} odayı silin.
     sessions: Oturumlar
-    settings: Oda ayarları
-    share: Girişi Yönet
-    shared_by: "%{email} tarafından paylaşıldı"
-    remove_shared_access_success: Paylaşılan oda listenizden başarıyla silindi
-    remove_shared_access_error: Paylaşılan oda listenizden silinirken bir hata oluştu
+    settings: Oda Ayarları
+    share: Erişimi Yönetin
+    shared_by: %{email} tarafından paylaşıldı
+    remove_shared_access_success: Paylaşılan oda, oda listenizden başarıyla kaldırıldı
+    remove_shared_access_error: Paylaşılan oda listenizden kaldırılırken bir hata oluştu
     shared_access_success: Oda başarıyla paylaşıldı
     shared_access_error: Oda paylaşılırken bir hata oluştu
-    start: Başla
-    unavailable: Oda sahibinin e-postası doğrulanamadığından bu oda şimdilik kapalıdır
+    start: Başlat
+    unavailable: Sahibinin e-postası doğrulanmadığı için bu oda şu anda kullanılamıyor.
     update_settings_error: Oda ayarları güncellenirken bir hata oluştu
     update_settings_success: Oda ayarları başarıyla güncellendi
     wait:
@@ -512,39 +583,41 @@ tr_TR:
       auto: Toplantı başladığında otomatik olarak katılacaksınız.
   settings:
     account:
-      fullname: Reklam alanı
+      fullname: Ad Soyad
       language: Dil
       provider: Sağlayıcı
       image: Görüntü
-      image_url: Profil Resmi URL'si
-      roles: Kullanıcı rolleri
+      image_url: Profil Resmi Bağlantısı
+      roles: Kullanıcı Rolü
       subtitle: Hesap Bilgilerinizi Güncelleyin
-      title: Hesap bilgisi
+      title: Hesap Bilgisi
+      reset_password: Kullanıcı parolasını sıfırlayın
     delete:
-      button: "Evet, hesabımı silmek istiyorum."
-      disclaimer: "Hesabınızı silerseniz <b>asla</b> geri alamazsınız. Hesabınıza ilişkin tüm bilgiler, ayarlar, odalar ve kayıtlar silinecektir."
-      subtitle: Hesabı Kalıcı Olarak Sil
-      title: Hesabı sil
+      button: Evet, hesabımı silmek istiyorum.
+      disclaimer: Hesabınızı silmeyi seçerseniz, kurtarılabilir <b>OLMAYACAK</b>. Ayarlar, odalar ve kayıt dahil olmak üzere hesabınızla ilgili tüm bilgiler kaldırılacaktır.
+      subtitle: Hesabınızı Kalıcı Olarak Silin
+      title: Hesabı Sil
     password:
-      confirmation: Yeni parola onayı
-      new: Yeni Şifre
-      old: Eski Şifre
-      subtitle: Şifreni değiştir
-      title: Kelime
-    title: profil
-    search: Ara
+      confirmation: Yeni Parola Onayı
+      new: Yeni Parola
+      old: Mevcut Parolanız
+      subtitle: Parolanızı değiştirin
+      title: Parola
+    title: Profil
+    search: Arama
   signup:
-    password_confirm: Şifre onayı
-    subtitle: Hesap oluştur
-    title: Hesap oluştur
-    with: " %{provider} ile giriş yap"
+    password_confirm: Parola Onayı
+    subtitle: Hesap Oluştur
+    title: KAYDOL
+    with: %{provider} ile kaydolun
   terms:
-    accept: "%{href} i kabul ediyorum"
-    accept_existing: Şartları ve Koşulları Kabul Ediyorum
-    title: Şartlar ve koşullar
+    accept: %{href} kabul ediyorum
+    accept_existing: Şartları ve koşulları kabul ediyorum
+    title: Şartlar ve Koşullar
   test_install: >
-    Bu dağıtım önceden konfigüre edilmiş bir test sunucusu kullanmaktadır, bunu kendi sunucunuzla değiştirmelisiniz. Detaylar için , bakınız %{href}.
-  update: Güncelleştirme
+    Bu dağıtım önceden yapılandırılmış bir test sunucusu kullanıyor, bunu kendi sunucunuzla değiştirmelisiniz.
+    Ayrıntılar için bkz. %{href}.
+  update: Güncelle
   verify:
     accept: Doğrulayın
     activated: Hesap doğrulandı!
@@ -552,6 +625,6 @@ tr_TR:
     invalid: Geçersiz doğrulama bağlantısı
     not_verified: Hesabınız henüz doğrulanmadı.
     resend: Doğrulama e-postasını tekrar gönder
-    signin: Lütfen hesabınıza erişmek için giriş yapın.
+    signin: Lütfen hesabınıza erişmek için oturum açın.
     title: Eposta adresinizi doğrulayın
     verification: Doğrulama
